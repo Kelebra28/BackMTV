@@ -13,9 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING,
            allowNull:false
           },
-      phoneNumber:{
+      phoneNumber: {
         type:DataTypes.STRING,
-        allowNull:false
+        allowNull:false,
+        validate: {
+          not:['[a-z], i']
+        }
       },
     email: {
       type:DataTypes.STRING,
@@ -33,7 +36,17 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING,
       allowNull:false
     },
-    password: DataTypes.STRING,
+    password:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate:{
+        not: [i],
+        notEmpty:{
+          args: true,
+          msg:"Your password isn't efficient"
+        }
+      }
+    }
   }, {});
 
   let cryptPassword = (password) => {

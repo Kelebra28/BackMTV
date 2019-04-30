@@ -15,8 +15,17 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
     Products.associate = function(models) {
-    Products.belongsToMany(models.Orders,{foreignKey:"orderId",as:"order"})
-    Products.belongsToMany(models.Seller,{foreignKey:"sellerId"})
+    Products.belongsToMany(models.Orders,{through:Products,foreignKey:"orderId", as: 'order'})
+    Products.belongsToMany(models.Seller,{through:Seller,foreignKey:"userId"})
   };
   return Products;
 };
+
+
+// Orders = sequelize.define('orders', {
+//   ,as:"order"/*/*/*/*/**/*/*//*/*/*/*/*/*/*/*/*/*/*/ */
+// });belongsToMany(Products, { through: Orders });
+// Products.belongsToMany(User, { through: Orders });
+
+// User.
+// user.addOrder(product, { through: { role: 'manager' }});

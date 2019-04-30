@@ -44,6 +44,7 @@ const me = async(req,res)=>{
     const profile = await Users.findOne(
         {where:{id:req.user.id},
         attributes:{exclude:["password"]},
+        //*******/condicion si es cliente/************/ 
         include:[
             {   
                 model:Orders,

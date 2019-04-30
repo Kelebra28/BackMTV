@@ -25,15 +25,38 @@ module.exports = {
     )
 
     queryInterface.addColumn(
-      "Orders",
-      "productsId",{
+      "Seller",
+      "UserId",{
         type:Sequelize.UUID,
         references:{
-          model:'Products',
+          model:'User',
           key:"id"
         }
       }
     )
+
+    queryInterface.addColumn(
+      "Collector",
+      "UserId",{
+        type:Sequelize.UUID,
+        references:{
+          model:'User',
+          key:"id"
+        }
+      }
+    )
+  
+    queryInterface.addColumn(
+      "Client",
+      "UserId",{
+        type:Sequelize.UUID,
+        references:{
+          model:'User',
+          key:"id"
+        }
+      }
+    )
+  
   
   
   

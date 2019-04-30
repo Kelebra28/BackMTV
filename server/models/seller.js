@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     comite: DataTypes.STRING
   }, {});
   Seller.associate = function(models) {
-    Seller.belongsToMany(models.Products,{foreignKey:"productId"});
+    Seller.belongsToMany(models.Products,{through:Products,foreignKey:"productId"});
   };
   return Seller;
 };
+
