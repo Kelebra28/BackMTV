@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     pay: DataTypes.STRING
   }, {});
   Client.associate = function(models) {
-    Client.belongsTo(models.User,{foreignKey:"userId", as:"user"});
-    Client.hasMany(models.Orders,{foreignKey:"orderId"});
+    Client.hasMany(models.Orders,{foreignKey:'orderId',sourceKey: 'orderKey'});
+    Client.belongsTo(models.Users,{foreignKey:'userId'});
   };
   return Client;
 };

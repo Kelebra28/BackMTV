@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     comite: DataTypes.STRING
   }, {});
   Seller.associate = function(models) {
-    Seller.belongsTo(models.User,{foreignKey:"userId", as:"user"});
-    Seller.hasMany(models.Products,{foreignKey:"productId"});
+    Seller.belongsTo(models.Users,{foreignKey:'userId', as:'user', });
+    Seller.hasMany(models.Products,{foreignKey:'productId',sourceKey: 'productKey'});
   };
   return Seller;
 };

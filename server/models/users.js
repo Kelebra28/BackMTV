@@ -82,9 +82,9 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   Users.associate = function(models) {
-    Users.hasOne(models.Seller,{foreignKey:"userId"});
-    Users.hasOne(models.Client,{foreignKey:"userId"});
-    Users.hasOne(models.Collecto,{foreignKey:"userId"});
+    Users.hasOne(models.Seller,{foreignKey:'userId'});
+    Users.hasOne(models.Client,{foreignKey:'userId'});
+    Users.hasOne(models.Collecto,{foreignKey:'userId'});
   };
   return Users;
 };

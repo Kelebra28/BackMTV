@@ -3,8 +3,8 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     queryInterface.addColumn(
-      "Products",
-      "userId",{
+      'Products',
+      'userId',{
         type:Sequelize.UUID,
         references:{
           model:'Users',
@@ -14,45 +14,45 @@ module.exports = {
     )
   
     queryInterface.addColumn(
-      "Orders",
-      "userId",{
+      'Orders',
+      'userId',{
         type:Sequelize.UUID,
         references:{
           model:'Users',
-          key:"id"
+          key:'id'
         }
       }
     )
 
     queryInterface.addColumn(
-      "Seller",
-      "UserId",{
+      'Seller',
+      'UserId',{
         type:Sequelize.UUID,
         references:{
           model:'User',
-          key:"id"
+          key:'id'
         }
       }
     )
 
     queryInterface.addColumn(
-      "Collector",
-      "UserId",{
+      'Collector',
+      'UserId',{
         type:Sequelize.UUID,
         references:{
           model:'User',
-          key:"id"
+          key:'id'
         }
       }
     )
   
     queryInterface.addColumn(
-      "Client",
-      "UserId",{
+      'Client',
+      'UserId',{
         type:Sequelize.UUID,
         references:{
           model:'User',
-          key:"id"
+          key:'id'
         }
       }
     )
