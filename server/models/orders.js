@@ -11,9 +11,8 @@ module.exports = (sequelize, DataTypes) => {
     totalPrice: DataTypes.DECIMAL(10,2)
   }, {});
   Orders.associate = function(models) {
-    Orders.hasMany(models.Collector,{foreignKey:"userId"});
-    Orders.hasMany(models.Client,{foreignKey:"userId"});
-    Orders.belongsToMany(models.Products, { through: Orders });
+    Orders.belongsTo(models.Client,{foreignKey:"userId"});
+    Orders.hasMany(models.Products, { through: Orders });
   };
   return Orders;
 };

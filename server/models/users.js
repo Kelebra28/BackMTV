@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate:{
-        not: [i],
+        not: ['i'],
         notEmpty:{
           args: true,
           msg:"Your password isn't efficient"

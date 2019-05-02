@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     ids_Orders: DataTypes.STRING
   }, {});
   Collector.associate = function(models) {
+    Collector.belongsTo(models.Orders,{foreignKey:"userId", as:"user"})
     Collector.hasMany(models.Orders,{foreignKey:"orderId"})
   };
   return Collector;

@@ -15,8 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
     Products.associate = function(models) {
-    Products.belongsToMany(models.Orders,{through:Products,foreignKey:"orderId", as: 'order'})
-    Products.belongsToMany(models.Seller,{through:Seller,foreignKey:"userId"})
+    Products.belongsTo(models.Orders,{foreignKey:"orderId", as: 'order'});
+    Products.hasMany(models.Seller,{foreignKey:"userId"});
   };
   return Products;
 };
